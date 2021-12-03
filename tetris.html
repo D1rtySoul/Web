@@ -1,0 +1,83 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tetris</title>
+  <link rel="stylesheet" href="css/tetris.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+</head>
+<body>
+  <header class="header-section">
+		<a href="index.html" class="site-logo">
+			<img src="img/logo(1).gif" alt="logo" height="75px" width="125px">
+		</a>
+		<ul class="main-menu">
+			<li><a href="index.html">Главная</a></li>
+			<li><a href="About.html">О сайте</a></li>
+			<li><a href="game.html">Игры</a></li>
+		</ul>
+	</header>
+  <div class="wrapper">
+
+    <div id="newGame" class="modal">
+        <div class="modal-content">
+          <h4>Tetris</h4>
+          <button onclick="newGame()" id="newGameBtn" class="modal-close waves-effect waves-light btn" style="width:250px">Начать новую игру</button>
+          </div>
+        </div>
+
+    <div id="pause" class="modal">
+        <div class="modal-content">
+          <h4>Пауза</h4>
+          <button onclick="pauseGame()" id="pauseBtn" class="modal-close waves-effect waves-light btn">Продолжить</button>
+          <button onclick="newGame()" id="StartNewBtn" class="modal-close waves-effect waves-light btn">Начать сначала</button>
+          </div>
+        </div>
+
+    <div id="gameOver" class="modal">
+        <div class="modal-content">
+          <h4>Конец игры</h4>
+              <div class="yourScore"></div>
+              <label for="name">Сохрани свой счёт</label>
+              <br><br>
+              <form id="highScore">
+              <input type="text" id="name" maxlength="7" placeholder="name..." onfocus="this.placeholder = ''" autocomplete="off" required/>
+              <button type="submit" id="submit" class="waves-effect waves-light btn">Подтвердить</button>
+              </form>
+					<br>
+              <a onclick="newGame()" class="modal-close waves-effect waves-light btn">Начать новую игру</a>
+          </div>
+        </div>
+
+    <div class="detailsLeft">
+      <div class="score"></div>
+      <div class="level"></div>
+      <div class="highScores"></div>
+    </div>
+
+    <canvas class="tetris" width="240" height="400"></canvas>
+
+    <div class="detailsRight">
+        <canvas class="next" width="160" height="160"></canvas>
+        <br>
+        <div class="controls">
+          <p><i class="fas fa-arrow-left"></i></span> Двигать влево</p>
+          <p><i class="fas fa-arrow-right"></i></span> Двигать вправо</p>
+          <p><i class="fas fa-arrow-down"></i></span> Опустить вниз</p>
+          <p><i class="fas fa-arrow-up"></i></span> Поворот в правую сторону</p>
+          <p><span style="font-size : 18px">Q</span> Поворот в левую сторону</p>
+          <p><span style="font-size : 18px">W</span> Поворот в правую сторону</p>
+          <p><span style="font-size: 18px">Esc</span> Пауза</p>
+        </div>
+      </div>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+  <script src="js/tetris.js"></script>
+
+</body>
+</html>
